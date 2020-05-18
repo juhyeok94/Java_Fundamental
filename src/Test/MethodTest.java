@@ -10,6 +10,14 @@ public class MethodTest {
 		return (long) first + (long) second;
 
 	}
-	
+	public double divide (int first, int second) {
+		return(double)first / (double)second;
 
+	}
+	public void prontln(String message) {
+		System.out.println(message);
+	}
+	
+	
+	
 }
