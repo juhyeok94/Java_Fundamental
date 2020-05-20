@@ -13,26 +13,10 @@ public class Homework {
 					rest ++;}
 				}
 			
-		if(rest == 1) {
-			System.out.println(i+"는 소수가 아닙니다.");
-		} else if(rest == 3)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 4)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 5)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 6)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 7)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 8)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest == 9)
-			System.out.println(i+"는 소수가 아닙니다.");
-		else if(rest==2) 
-		System.out.println(i+"는 소수 입니다.");}
-		
+		if(rest==2) 
+		System.out.println(i+"는 소수 입니다.");
 		}
 		
-	
+	}
+
 }
