@@ -29,8 +29,8 @@ public class MathDemo {
 		a1 = (int)Math.pow(2, 3);
 		System.out.println(a1);
 		
-		d1 = Math.random()*45;
-		System.out.println(d1);
+		a1 =(int)(Math.random()*45);
+		System.out.println(a1);
 		
 	}
 }
