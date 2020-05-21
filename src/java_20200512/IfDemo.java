@@ -3,6 +3,7 @@ package java_20200512;
 public class IfDemo {
 	public static void main(String[] args) {
 		//RUN Configuration => Arguments => Program arguments
+		//위에 
 		int month = Integer.parseInt(args[0]);
 		String season = null;
 		if (month == 12 || month == 1 || month == 2) {

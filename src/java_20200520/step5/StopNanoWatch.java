@@ -2,8 +2,8 @@ package java_20200520.step5;
 
 public class StopNanoWatch extends StopWatch {
 	// 나노세컨드를 관리하기 위한 변수
-	long startTime;
-	long endTime;
+	private long startTime;
+	private long endTime;
 
 	// 나노세컨드의 경과시간
 	private double getElapsedTime() {
