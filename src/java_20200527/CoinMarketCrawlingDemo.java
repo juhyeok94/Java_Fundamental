@@ -10,6 +10,16 @@ import org.jsoup.select.Elements;
 
 public class CoinMarketCrawlingDemo {
 	public static void main(String[] args) {
+		//문자를 더블로 replace는 , 없애는거
+		String test = "6,200.45".replace(",","");
+		double d = Double.parseDouble(test);
+		System.out.println(d);
+		
+		
+		//더블값을 , 찍어서 문자열로 바꾸는법
+		String test1 = String.format("%,.2f",d);
+		System.out.println(test1);
+		
 		FileWriter fw = null;
 	
 		
