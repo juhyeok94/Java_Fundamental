@@ -1,14 +1,14 @@
-package java_20200602;
+package java_20200603;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class JdbcUpdateDemo {
+//mariadb member1 테이블의 8번을 지움
+public class JdbcDeleteDemo {
 	public static void main(String[] args) {
 		//1. 드라이브 로드
-		
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -20,48 +20,36 @@ public class JdbcUpdateDemo {
 		PreparedStatement pstmt = null;
 		
 		
-		
 		try {
-			//2. 데이터 베이스 연결 => Connection 객체를 생성한다.
-			//localhost : 데이터 베이스 설치 ip
-			//3306 : 데이터 베이스 포트
-			//kpc : 데이터 베이스 명
+			//2. 데이터베이스와 연결한다.
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/kpc", //url
 					"kpc12", //user
-					"kpc1234" //password
+					"kpc1234" //PW
 					);
-			
-			//3. SQL문을 전송할 수 있는 PreparedStatement 객체를 생성
-			//SQL을 먼저 작성하지 말고 완성부터 하고 나서 데이터 입력
+
+			//3. SQL문을 전송할 수 있는 PreparedStatement 객체를 생성한다. 
 			StringBuffer sql = new StringBuffer();
-			sql.append("UPDATE member1 ");
-			sql.append("SET NAME = ?, addr = ? ");
-			sql.append("WHERE num = ? ");
-			
+			sql.append("DELETE FROM member1    ");
+			sql.append("WHERE num = ?          ");
 			pstmt = con.prepareStatement(sql.toString());
 			
-			//4. 바인딩 변수 처리
-			int index = 0;
-			pstmt.setString(++index, "샤넬2");
-			pstmt.setString(++index, "프랑스2");
-			pstmt.setString(++index, "12");
+			//4. 바인딩 변수를 성정
+			pstmt.setInt(1, 8);
 			
-			//5. SQL문 전송
-			//resultCount : 업데이트 된 행의수를 반환함.
+			//5. SQL문을 전송한다.
 			int resultCount = pstmt.executeUpdate();
 			
+			System.out.println("삭제된 행의 수: "+resultCount);
 			
-			
-			System.out.println("전송결과 : "+resultCount);
 			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
+			//6. 모든 자원을 반납한다.
 		} finally {
-		
-			//6. 모든 자원 반납
 				try {
 					if(con != null) con.close();
 					if(pstmt != null) pstmt.close();
@@ -70,10 +58,7 @@ public class JdbcUpdateDemo {
 					e.printStackTrace();
 				}
 		}
-		
-		
-		
-		
+				
 		
 		
 		
