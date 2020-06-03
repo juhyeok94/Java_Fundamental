@@ -40,7 +40,7 @@ public class JdbcDeleteDemo {
 			//5. SQL문을 전송한다.
 			int resultCount = pstmt.executeUpdate();
 			
-			System.out.println("삭제된 행의 수: "+resultCount);
+			System.out.println("삭제된 행의 수 : "+resultCount);
 			
 			
 			
