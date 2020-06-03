@@ -24,6 +24,7 @@ public class MemberDto {
 		this.addr = addr;
 	}
 
+	
 	//alt shift s => r
 	//setter getter
 	public int getNum() {
