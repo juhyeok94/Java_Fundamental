@@ -11,15 +11,22 @@ import java.util.ArrayList;
 //Dao : Data Access Object
 
 public class MemberDao {
-	public int insert(MemberDto m) {
-		int resultCount = 0;
 	
+	//드라이브로드를 생성자에 만들면 메소드 생성마다 만들필요가 없다.
+	public MemberDao() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	
+//===========================================================
+	public int insert(MemberDto m) {
+		int resultCount = 0;
+	
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -62,12 +69,6 @@ public class MemberDao {
 	public int Update(MemberDto m) {
 		int resultCount = 0;
 		
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -114,12 +115,7 @@ public class MemberDao {
 	public int delete(int num) {
 		int resultCount = 0;
 		
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -158,17 +154,11 @@ public class MemberDao {
 		return resultCount;
 	}
 	
+//=============================================================
 	
-
 	public ArrayList<MemberDto> select() {
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 		
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -213,15 +203,12 @@ public class MemberDao {
 		return list;
 	}
 	
+	
+//=============================================================
+	
 	public MemberDto select(int num) {
 		MemberDto mdto = null;
 		
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
