@@ -17,7 +17,7 @@ public class FileDemo {
 		// v는 많이 쓰는거
 		
 		File f1 = new File("C:\\dev\\2020\\05\\25");
-		boolean success = f1.mkdirs();
+		boolean success = f1.mkdirs      ();
 		if(success) {
 			System.out.println("디렉토리를 생성했습니다.");
 		}else {
